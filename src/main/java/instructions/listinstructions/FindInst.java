@@ -54,7 +54,7 @@ public class FindInst extends Instruction {
 
     /**
      * Performs the search to list out all the instructions that contain the keyword in it. The
-     * numbering is kept the same as the <code>list</code> command.
+     * numbering is kept the same as the {@code list} command.
      *
      * @param taskList the task list for the instruction to perform its action on.
      * @return the String representation of the filtered list, showing only tasks that contain the keyword.

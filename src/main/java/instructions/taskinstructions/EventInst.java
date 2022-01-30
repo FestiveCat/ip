@@ -83,11 +83,9 @@ public class EventInst extends NewTaskInst {
             throw TOO_MANY_ARGUMENTS_EXCEPTION;
         }
 
-        boolean startTimeIsValid = DateTimeParser.checkValidFormat(timings[0]);
-        boolean endTimeIsValid = DateTimeParser.checkValidFormat(timings[1]);
-        if (!startTimeIsValid || !endTimeIsValid) {
-            throw INVALID_DATE_TIME_FORMAT;
-        }
+        // if either of the timings are invalid, an exception will be thrown
+        DateTimeParser.checkValidFormat(timings[0]);
+        DateTimeParser.checkValidFormat(timings[1]);
 
         LocalDateTime startTime = DateTimeParser.parse(timings[0]);
         LocalDateTime endTime = DateTimeParser.parse(timings[1]);

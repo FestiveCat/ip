@@ -57,10 +57,8 @@ public class DeadlineInst extends NewTaskInst {
             throw TOO_MANY_ARGUMENTS_EXCEPTION;
         }
 
-        boolean isValidDateTimeFormat = DateTimeParser.checkValidFormat(split[1]);
-        if (!isValidDateTimeFormat) {
-            throw INVALID_DATE_TIME_FORMAT;
-        }
+        DateTimeParser.checkValidFormat(split[1]); // if invalid, an exception will be thrown.
+
         LocalDateTime deadline = DateTimeParser.parse(split[1]);
 
         return new DeadlineInst(split[0], deadline);

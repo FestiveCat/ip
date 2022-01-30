@@ -1,7 +1,7 @@
 package exceptions;
 
 /**
- * This class represents a exception that is raised when reading a save file.
+ * This class represents an exception that is raised when reading a save file.
  * In particular, this will be thrown when the reader encounters a character that the file-saver
  * cannot have written.
  *

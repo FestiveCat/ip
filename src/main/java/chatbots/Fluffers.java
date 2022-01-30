@@ -4,12 +4,11 @@ import java.util.Scanner;
 
 import exceptions.InvalidInputException;
 import exceptions.SaveFileModifiedException;
+import file.management.FileManager;
 import instructions.ExitInst;
 import instructions.Instruction;
 import instructions.listinstructions.DisplayListInst;
 import instructions.listinstructions.FindInst;
-import tasks.TaskList;
-
 
 /**
  * This class encapsulates the chatbot Fluffers for CS2103T's Individual Project.
@@ -48,7 +47,11 @@ public class Fluffers extends TaskManagerChatbot {
         }
     }
 
+    /** Name of the saved file */
+    private static String fileName = "saved-taskList.txt";
 
+    /** Folder path to the saved file */
+    private static String filePath = "data";
 
     /**
      * Constructs an awake Fluffers.
@@ -58,7 +61,7 @@ public class Fluffers extends TaskManagerChatbot {
      *          modification to the file.
      */
     public Fluffers() throws SaveFileModifiedException {
-        super(TaskList.loadFromFile());
+        super(FileManager.loadTaskListFromFile(filePath, fileName));
     }
 
     /**
